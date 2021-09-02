@@ -1,4 +1,27 @@
+import javax.swing.JOptionPane;
 public class Sales {
+
+    public static void main(String[] args) {
+
+
+     double  discount, quantity, price, salesTax, subTotal;
+     double taxTotal,totalCost;
+
+     price = Integer.parseInt(JOptionPane.showInputDialog("What is the sale price?"));
+     discount = Integer.parseInt(JOptionPane.showInputDialog("What is the discount?"));
+     quantity = Integer.parseInt(JOptionPane.showInputDialog("How many are you buying?"));
+     salesTax = Integer.parseInt(JOptionPane.showInputDialog("What is the sales tax?"));
+
+     subTotal = (quantity * (price * (1 - (discount/100))));
+     taxTotal = (subTotal * (salesTax/100));
+     totalCost = subTotal + taxTotal;
+
+        JOptionPane.showMessageDialog(null, "Here is your Sub Total: $" + subTotal);
+        JOptionPane.showMessageDialog(null, "Here is your Tax Total: $" + taxTotal);
+        JOptionPane.showMessageDialog(null, "Here is your Total Cost: $" + totalCost);
+
+        System.exit(0);
+    }
 
     /*Write a program, using dialog boxes, which prompts the user to enter a quantity, price, discount(as an integer) and sales tax(as an integer).
     The program should output the subtotal, tax total and total cost. Output should have proper currency format and proper rounding.
